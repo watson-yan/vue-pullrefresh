@@ -10,7 +10,8 @@
 
 ### 使用方式
 > git clone https://github.com/watson-yan/vue-pullrefresh.git
-该组件的源码 ./src/components/pullRefresh.vue
+
+> 组件的源码路径:  ./src/components/pullRefresh.vue
 
 ### 说明
 * 组件需要一个prop:next 类型为函数，表示刷新函数, 而且刷新函数需要为Promise语法糖，只有当next被resolve之后。提示信息才会消失
