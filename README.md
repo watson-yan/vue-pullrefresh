@@ -1,21 +1,27 @@
 # vue-pullrefresh
 
-> A Vue.js project
+> Vue组件实现下拉刷新功能
 
-## Build Setup
+### 效果图
+<img src="./static/pullrefresh.gif">
 
-``` bash
-# install dependencies
-npm install
+### Demo地址
+<img src="./static/qrcode.jpeg" width="200" height="200">
 
-# serve with hot reload at localhost:8080
-npm run dev
+### 使用方式
+> git clone https://github.com/watson-yan/vue-pullrefresh.git
 
-# build for production with minification
-npm run build
+该组件的源码 ./src/components/pullRefresh.vue
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+### 设计思路
+1. 假定我们有一个容器Container(固定高度，并设置样式overflow-y:auto), 容器中的内容为Content(内容高度超出容器的高度)。由于内容高度已经超过容器高度，那么容器Container就会出现滚动条。具体图示如下：
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+<img src="./static/pic1.jpg" width="400" height="400">
+
+2. 当我们在顶部下拉的时候，希望能更新Content中的内容。即在Container的scrollTop为0的时候 ，我们在触摸屏幕下拉能触发刷新规则。
+
+3. 顶部信息的显示采取固定在Container的顶部，通过下拉的距离控制顶部信息的显示高度。从而达到下拉时显示提示信息的效果。
+
+<img src="./static/pic2.jpg" width="400" height="400">
+
+
