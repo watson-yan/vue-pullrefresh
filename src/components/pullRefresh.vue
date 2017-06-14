@@ -30,7 +30,7 @@
 <script>
   export default {
     props: {
-      next: {
+      next: { // 刷新函数
         type: Function,
         required: true
       }
@@ -47,7 +47,8 @@
     mounted() {
       const container = this.$refs.container
       container.addEventListener('touchstart', (e) => {
-        if (this.loading) {
+        // 如果loading为true就代表刷新函数正在进行，此时阻止下拉操作，返回
+        if (this.loading) { 
           e.preventDefault()
           return
         }
@@ -104,6 +105,7 @@
           })
           return
         }
+        // 重置变量
         this.flag = 0
         container.style.overflow = 'auto'
         container.style.transform = 'translate3D(0px, 0px, 0px)'
